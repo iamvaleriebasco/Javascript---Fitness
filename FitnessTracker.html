@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+</head>
+<body>
+    
+
+<script>
+    //part 1
+
+    //task 1
+    function startWorkout(){
+        console.log("Workout Started!");
+    }
+    //task 2
+    function calculatedSteps(){
+        let morning = 2500;
+        let evening = 3000;
+        let calculatedSteps = morning + evening;
+        console.log("Calculated Steps: " + calculatedSteps);
+    }
+    //task 3
+    startWorkout();
+    calculatedSteps();
+
+
+    //part 2
+
+    //task 1 and 3
+    function logWorkout(activity = "Unknown Activity", duration) {
+    console.log(`I did ${activity} for ${duration} minutes.`);
+
+    }
+    //task 2
+    logWorkout("Running", 40);
+    logWorkout("Swimming", 30);
+    logWorkout(undefined, 20); 
+
+
+    //part 3
+
+    //task 1
+    function caloriesBurned(minutes){
+        return minutes * 5;
+    }
+
+    //task 2
+    let calories = caloriesBurned(60);
+    console.log("Calories Burned:", calories);
+    
+    //task 3
+    function isGoalMet(steps) {
+    return steps >= 10000;
+
+    console.log("Goal met at 12000?", isGoalMet(12000)); 
+    console.log("Goal met at 8000?", isGoalMet(8000));   
+    }
+
+    //part 4
+
+    //task 1
+    function multiplyCalories(rate, minutes) {
+    return rate * minutes;
+    }
+    //task 2
+    function dailyCalories(rate, minutes) {
+    let Calories = multiplyCalories(rate, minutes);
+    return Calories + 50; 
+    }
+    //task 3
+    let totalDailyCalories = dailyCalories(8, 30);
+    console.log("Total Daily Calories:", totalDailyCalories);
+
+    //part 5
+
+    //task 1
+    let program = "Fitness Tracker";
+
+    //task 2
+    function printProgram() {
+    console.log("Program:", program); //global
+    let workoutType = "Cardio";
+    console.log("Workout Type:", workoutType); //local
+    }
+    //task 3
+    printProgram();
+
+    try {
+    console.log("Workout Type Outside:", workoutType); //this will error
+    } catch (error) {
+    console.log("Error:", error.message); 
+    //task 4: Val's observation about scope
+    //Variables declared inside a function with let, const, or var are only accessible within said function.
+    }
+
+    //part 6
+    //task
+    console.log("Today's workout is:", workout); 
+    var workout = "Stretching";
+
+
+
+</script>
+</body>
+</html>
